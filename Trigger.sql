@@ -1,6 +1,6 @@
-drop trigger ratingcheck;
-drop function contador;
-drop procedure contar;
+drop trigger if exists ratingcheck;
+drop function if exists contador;
+drop procedure if exists contar;
 delimiter //
 create TRIGGER ratingcheck BEFORE INSERT ON aboutdisks FOR EACH ROW IF NEW.rating >10 THEN SET NEW.rating = 0; 
 END IF;//
